@@ -18,16 +18,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Restore dependencies
-        run: dotnet restore
+      - name: Restore API
+        run: dotnet restore RaceDay.API.csproj
 
-      - name: Build
-        run: dotnet build --no-restore --configuration Release
+      - name: Build API
+        run: dotnet build RaceDay.API.csproj --no-restore --configuration Release
 
-      - name: Run tests
-        run: dotnet test --no-build --configuration Release --verbosity normal
+      - name: Restore Tests
+        run: dotnet restore ..\RaceDay.API.Tests\RaceDay.API.Tests.csproj 2>$null || dotnet restore ../RaceDay.API.Tests/RaceDay.API.Tests.csproj
+
+      - name: Test
+        run: dotnet test ../RaceDay.API.Tests/RaceDay.API.Tests.csproj --configuration Release --verbosity normal
