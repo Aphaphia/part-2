@@ -10,6 +10,10 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: RaceDay.API
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,10 +24,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore RaceDay.API/RaceDay.API.sln
+        run: dotnet restore RaceDay.API.csproj
 
       - name: Build
-        run: dotnet build RaceDay.API/RaceDay.API.sln --no-restore --configuration Release
+        run: dotnet build RaceDay.API.csproj --no-restore --configuration Release
 
       - name: Run tests
-        run: dotnet test RaceDay.API/RaceDay.API.sln --no-build --configuration Release --verbosity normal
+        run: dotnet test --no-build --configuration Release --verbosity normal
