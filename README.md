@@ -1,6 +1,6 @@
 # RaceDay API (PROG6212 – Part 2)
 
-A RESTful ASP.NET Core Web API for the RaceDay event management system. It supports two roles — Organisers and Participants — with JWT authentication, event and category management, enrolments, and race results.
+A RESTful ASP.NET Core Web API for the RaceDay event management system. It supports two roles Organisers and Participants with JWT authentication, event and category management, enrolments, and race results.
 
 ## Tech Stack
 
