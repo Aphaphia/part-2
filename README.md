@@ -2,29 +2,39 @@
 
 
 
-A RESTful ASP.NET Core Web API for the RaceDay event management system. It supports organisers and participants with authentication, event management, category management, enrolments, and race results.
+RESTful ASP.NET Core Web API for the RaceDay event management system. It powers organisers and participants with secure authentication, event management, category management, enrolments, and race results.
 
 
 
-\## 🛠 Tech Stack
+\---
+
+
+
+\## Tech Stack
 
 
 
 \- ASP.NET Core 8 Web API
 
-\- Entity Framework Core (Code-First, SQL Server)
+\- Entity Framework Core (Code-First)
+
+\- SQL Server / LocalDB
 
 \- JWT Authentication + Role-Based Authorization
 
-\- Swagger / Swashbuckle for API documentation
+\- Swagger / Swashbuckle (OpenAPI 3.0)
 
-\- xUnit + Moq for unit tests
+\- xUnit + Moq for unit testing
 
 \- GitHub Actions for CI/CD
 
 
 
-\## 🔐 Roles
+\---
+
+
+
+\## Roles
 
 
 
@@ -32,13 +42,17 @@ A RESTful ASP.NET Core Web API for the RaceDay event management system. It suppo
 
 |------|--------------|
 
-| \*\*Organiser\*\* | Create / Update / Delete events, manage categories, view enrolments for own events, capture and correct results |
+| \*\*Organiser\*\* | Create, update, and delete events. Manage categories. View enrolments for own events. Capture and correct race results. |
 
-| \*\*Participant\*\* | Browse events, enrol, cancel enrolment, view own results |
+| \*\*Participant\*\* | Browse events. Enrol into events by selecting a category. Cancel own enrolment. View personal results. |
 
 
 
-\## ⚙️ Setup Instructions
+\---
+
+
+
+\## Setup Instructions
 
 
 
@@ -51,4 +65,13 @@ A RESTful ASP.NET Core Web API for the RaceDay event management system. It suppo
 git clone https://github.com/Aphaphia/part-2.git
 
 cd part-2
+
+
+
+
+
+
+
+
+
 
